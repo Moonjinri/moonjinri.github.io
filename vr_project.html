@@ -6,13 +6,7 @@
     <title>Project B :: VR Consumer Choice Analysis</title>
     <link rel="stylesheet" href="style.css"> 
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; font-family: 'Consolas', 'Courier New', monospace; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { color: #58a6ff; border-bottom: 2px solid #30363d; padding-bottom: 15px; font-size: 2.0em; }
-        h3 { color: #2ecc71; margin-top: 35px; border-bottom: 1px dashed #30363d; padding-bottom: 5px; font-size: 1.3em;}
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back-link { margin-bottom: 20px; display: block; }
+        /* vr_project.html 보조 스타일 (스타일.css를 읽어오지 못할 경우 대비) */
         .download-button { 
             display: inline-block; 
             padding: 10px 20px; 
@@ -22,9 +16,13 @@
             margin-top: 20px;
             border-radius: 3px;
         }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; background-color: #161b22; }
-        th, td { border: 1px solid #30363d; padding: 10px; text-align: left; font-size: 0.95em; }
-        th { background-color: #21262d; }
+        .back-link { margin-bottom: 20px; display: block; }
+        .summary-box { 
+            border-left: 3px solid #f1c40f; 
+            padding-left: 15px; 
+            margin-top: 20px; 
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -34,52 +32,67 @@
 
     <h1>Project B :: VR/AR Consumer Choice Analysis</h1>
     
-    <p>// System Modeling & Forecasting</p>
-    
-    <div style="border-left: 3px solid #f1c40f; padding-left: 15px; margin-top: 20px;">
-        <p><strong>프로젝트 개요:</strong> 가상현실(VR) 기기 구매 행태에 대한 소비자 선호도를 이산선택모형(Discrete Choice Model)으로 분석하여 잠재 수요를 예측하고, 이를 바탕으로 제조사의 생산 및 공급망(SCM) 시스템 설계에 필요한 정보를 제공하는 모델링 연구.</p>
+    <div class="summary-box">
+        [cite_start]<p><strong>연구 개요:</strong> '공간 컴퓨팅' 시대에 맞춰 Apple, Samsung 등 거대 기업이 진입하는 VR 기기 시장의 높은 관심 대비 낮은 구매율(캐즘 상태 [cite: 258, 260]) 원인을 분석. **이산선택모형**을 통해 소비자가 중요하게 여기는 속성을 파악하고, 기업의 제품 개발 전략을 제시하는 **수요 예측 모델링** 연구를 수행.</p>
     </div>
 
-    <h3>0x01. Research Goals & Methodology</h3>
+    <h3>0x01. Key Methodology & Results</h3>
     
-    <h4>1. 목표 (Goal)</h4>
-    <p>소비자의 심리적 요인과 기기 특성(가격, 성능, 브랜드)이 결합된 효용 함수를 구축하여 시장 점유율 및 수요량을 예측하고, 이를 통해 SCM 계획의 초기 불확실성을 최소화.</p>
+    <h4>1. 실험 속성 및 모델 (Discrete Choice Model)</h4>
+    [cite_start]<p>총 7가지 속성(브랜드/OS, 주사율, 상호작용 수준, 무게, 컨텐츠, 배터리, 가격)을 선정하여 설문지를 구성하고 [cite: 38, 77][cite_start], **Logit 모델**을 적용하여 각 속성이 소비자 효용에 미치는 영향을 정량화했습니다[cite: 185].</p>
     
-    <h4>2. 활용 기법 (Key Methodology)</h4>
-    <ul>
-        <li>**주요 모델:** 이산선택모형 (Logit Model, Mixed Logit Model)</li>
-        <li>**데이터:** Discrete Choice Experiment (DCE) 데이터를 기반으로 분석</li>
-        <li>**도구:** Python (Pandas, Statsmodels, Scikit-learn)</li>
-    </ul>
-
-    <h3>0x02. Core Results & Applications</h3>
+    <h4>2. 핵심 분석 결과 (MWTP & RI)</h4>
+    [cite_start]<p>속성별 효용 계수($\beta$) 및 **한계지불의사액 (MWTP)** 분석을 통해 소비자가 가격 외에 가장 중요하게 생각하는 속성을 규명했습니다[cite: 111, 120, 122].</p>
     
     <table>
         <thead>
             <tr>
-                <th>핵심 성과</th>
-                <th>적용 모델</th>
-                <th>연구의 OR/SCM 기여도</th>
+                <th>분석 지표</th>
+                <th>주요 속성</th>
+                <th>MWTP (가격 외 지불 의사액)</th>
+                <th>상대적 중요도 (RI)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>소비자 선호 요인 규명</td>
-                <td>Logit Model</td>
-                <td>소비자의 선택 확률(수요)을 예측하여, SCM의 재고 관리 및 생산 스케줄링 계획의 **가중치(Weight)**로 활용 가능.</td>
+                <td>선호도/가격 저항</td>
+                <td>**가격**</td>
+                <td>-1,000,000원 (기준)</td>
+                [cite_start]<td>**14%** [cite: 178]</td>
             </tr>
             <tr>
-                <td>가격 탄력성 분석</td>
-                <td>Mixed Logit</td>
-                <td>가격 민감도에 대한 **소비자 이질성(Heterogeneity)**을 분석하여, 시장 세분화 및 타겟 마케팅 전략 수립에 기여.</td>
+                <td>브랜드 가치</td>
+                <td>**Apple (Vision OS)**</td>
+                [cite_start]<td>+181,325원 (ETC 대비) [cite: 131]</td>
+                [cite_start]<td>**19%** (전체 속성 중 2위) [cite: 175]</td>
+            </tr>
+            <tr>
+                <td>사용 편의성</td>
+                <td>**상호작용 수준**</td>
+                [cite_start]<td>-182,826원 (전신 상호작용 시) [cite: 141]</td>
+                [cite_start]<td>**18%** [cite: 177]</td>
+            </tr>
+            <tr>
+                <td>지속성</td>
+                <td>**배터리 타임 (1시간 증가)**</td>
+                [cite_start]<td>+94,964원 (Samsung) [cite: 133]</td>
+                [cite_start]<td>**9%** [cite: 172]</td>
             </tr>
         </tbody>
     </table>
-
-    <h3>0x03. Final Presentation</h3>
-    <p>기말 프로젝트 최종 발표 자료(PDF)를 다운로드하여 분석 과정 및 상세 결과 테이블을 확인할 수 있습니다.</p>
     
-    <a href="vr_project_final_presentation.pdf" class="download-button" target="_blank">
+    <h3>0x03. Market Simulation & Strategic Implication</h3>
+    
+    <h4>1. 시장 점유율 예측 (Market Share)</h4>
+    [cite_start]<p>실제 제품 수치 대입 결과, **Meta Quest (61%)**가 압도적 우위를 보이며 [cite: 196, 225][cite_start], **Samsung Galaxy XR (29%)**이 뒤를 잇는 것으로 예측됨[cite: 186, 204]. [cite_start](Apple Vision Pro는 5% [cite: 194]).</p>
+    
+    <h4>2. 전략 시뮬레이션</h4>
+    [cite_start]<p>분석 결과를 기반으로 **삼성 갤럭시XR**이 **Meta**와 대등한 효용($V=5.068$)을 가지기 위한 **전략 가격(106.4만 원)**을 도출하는 등 [cite: 235, 239][cite_start], **가격 인하 및 속성 변화 시뮬레이션**을 수행하여 SCM 및 마케팅 전략을 제시했습니다[cite: 230, 233].</p>
+
+    <h4 style="color: #f1c40f;">▶️ FINAL REPORT DOWNLOAD</h4>
+    <p>상세한 효용 계수, P-value, 시뮬레이션 과정 및 함의(Insight)를 PDF를 통해 확인하실 수 있습니다.</p>
+    
+    <a href="VR_기기_속성별_소비자_선호도_분석(최종).pdf" class="download-button" target="_blank">
         ⬇️ DOWNLOAD FINAL PRESENTATION (PDF)
     </a>
 
