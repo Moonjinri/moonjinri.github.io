@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)공부하자 - 공부하자.한국</title>
+    <style>
+        /* 기본 설정 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #111;
+            color: #eee;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* 네비게이션 */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #4facfe; }
+        nav ul { display: flex; gap: 2rem; }
+        nav a:hover { color: #4facfe; transition: 0.3s; }
+
+        /* 섹션 공통 */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #222;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        h2 span { border-bottom: 4px solid #4facfe; padding-bottom: 10px; }
+
+        /* 메인 배너 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.5rem; color: #888; margin-bottom: 2rem; }
+        .btn {
+            padding: 1rem 2rem;
+            background: #4facfe;
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #00f2fe; transform: translateY(-3px); }
+
+        /* 기업 소개 */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .about-text p { margin-bottom: 1rem; color: #aaa; }
+        .stat-box {
+            background: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-num { font-size: 3rem; font-weight: bold; color: #4facfe; }
+
+        /* 구성원 소개 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .member-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+        .member-card:hover { border-color: #4facfe; transform: translateY(-5px); }
+        .member-role { color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+        .member-desc { margin-top: 1rem; font-size: 0.95rem; color: #ccc; }
+
+        /* 사업 아이템 */
+        .business-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .business-item {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .business-item h3 { margin-bottom: 1rem; color: #00f2fe; }
+        
+        /* 찾아오는 길 */
+        .map-container {
+            background: #222;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: #555;
+            font-size: 1.2rem;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* 모바일 메뉴 생략 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">공부하자.한국</div>
+        <nav>
+            <ul>
+                <li><a href="#about">기업 소개</a></li>
+                <li><a href="#team">구성원</a></li>
+                <li><a href="#business">사업 아이템</a></li>
+                <li><a href="#contact">찾아오는 길</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>아무것도 안 한다.<br>하지만 무엇이든 한다.</h1>
+        <p>Zero to Hero? No, We are Zero to Infinity.</p>
+        <a href="#contact" class="btn">아이템 제보하기</a>
+    </div>
+
+    <section id="about">
+        <h2><span>ABOUT US</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>잠재력이 폭발하는<br>초연결 하이브리드 기업</h3>
+                <p>
+                    (주)공부하자는 4명의 정예 멤버가 디스코드(Discord)라는 메타버스 공간에 상주하며
+                    기회가 올 때까지 에너지를 비축하는 혁신적인 기업입니다.
+                </p>
+                <p>
+                    평소에는 E-sports(LOL, Overwatch)를 통해 팀워크를 다지며,
+                    프로젝트 발생 시 '개떼 전략(Swarm Tactics)'으로 순식간에 업무를 처리합니다.
+                </p>
+            </div>
+            <div class="stat-box">
+                <p>현재 보유 아이템</p>
+                <div class="stat-num">0개</div>
+                <p style="margin-top:10px; color:#666;">*하지만 열정은 무한대</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2><span>TEAM MEMBER</span></h2>
+        <div class="team-grid">
+            <div class="member-card">
+                <h3>나형동</h3>
+                <div class="member-role">Co-Founder</div>
+                <div class="member-desc">"일단 던져봐, 수습은 같이 하자."<br>분위기 메이커 및 행동대장</div>
+            </div>
+            <div class="member-card">
+                <h3>진원석</h3>
+                <div class="member-role">Co-Founder</div>
+                <div class="member-desc">"그래서 오늘 저녁 뭐 먹음?"<br>복지 및 식음료 담당</div>
+            </div>
+            <div class="member-card">
+                <h3>문혁</h3>
+                <div class="member-role">Co-Founder</div>
+                <div class="member-desc">"이거 논리적으로 말이 안 되는데?"<br>전략 기획 및 팩트 폭격기</div>
+            </div>
+            <div class="member-card">
+                <h3>신선민</h3>
+                <div class="member-role">Co-Founder</div>
+                <div class="member-desc">"아 귀찮은데... 얼마 준다고?"<br>실무 총괄 및 재무 관리</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="business">
+        <h2><span>BUSINESS AREA</span></h2>
+        <div class="business-list">
+            <div class="business-item">
+                <h3>💻 Digital Strategy Analysis</h3>
+                <p>리그 오브 레전드 및 오버워치 등 주요 경쟁 플랫폼에서의 전략적 우위 선점을 위한 심층 분석 및 실전 시뮬레이션을 매일 수행합니다.</p>
+            </div>
+            <div class="business-item">
+                <h3>⚾️ Security Solution</h3>
+                <p>대규모 스포츠 이벤트(야구장)의 안전과 질서를 유지하는 현장 보안 솔루션을 제공합니다. (a.k.a 알바)</p>
+            </div>
+            <div class="business-item">
+                <h3>🏗️ Infra Construction</h3>
+                <p>도시 기반 시설 확충을 위한 물리적 노동력을 제공하여 즉각적인 현금 흐름(Cash-flow)을 창출합니다. (a.k.a 노가다)</p>
+            </div>
+            <div class="business-item">
+                <h3>💰 Angel Funding Series A</h3>
+                <p>가족(Parents) 기반의 엔젤 투자를 유치하여 안정적인 운영 자금을 확보하고 있습니다. (a.k.a 용돈)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2><span>LOCATION</span></h2>
+        <div class="map-container">
+            <div style="text-align: center;">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">🎧</p>
+                <p>Physical Office Not Found<br>We Live in <strong>Discord</strong></p>
+            </div>
+        </div>
+        <div class="contact-info">
+            <p><strong>Headquarters:</strong> 광주광역시 어딘가 & 사이버 세상</p>
+            <p><strong>Email:</strong> contact@gongbuhaja.kr</p>
+            <p style="margin-top: 2rem; color: #666; font-size: 0.8rem;">
+                © 2025 (주)공부하자. All rights reserved by Parents' Wallet.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
