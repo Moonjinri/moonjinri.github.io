@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon's Laboratory</title>
+    <title>Moon Hyuk | Portfolio</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <style>
-        /* Global Styles */
+        /* Global Styles - 디자인은 그대로 유지 */
         :root {
             --bg-color: #0f0f12;
             --card-bg: #16161a;
-            --accent-color: #6c5ce7; /* Purple Blue */
+            --accent-color: #6c5ce7;
             --text-main: #e0e0e0;
             --text-sub: #9ca3af;
             --border-color: #2a2a2a;
@@ -45,33 +45,33 @@
         }
 
         .logo { 
-            font-size: 1.4rem; 
-            font-weight: 800; 
-            letter-spacing: -0.5px; 
+            font-size: 1.2rem; 
+            font-weight: 700; 
             color: #fff; 
         }
-        .logo span { color: var(--accent-color); }
+        .logo span { color: var(--accent-color); font-weight: 400; }
         
-        nav ul { display: flex; gap: 2rem; font-size: 0.95rem; font-weight: 500; }
+        nav ul { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; }
         nav a:hover { color: var(--accent-color); }
         .blog-link { 
-            border: 1px solid var(--accent-color); 
+            border: 1px solid var(--border-color); 
             padding: 0.3rem 0.8rem; 
             border-radius: 4px; 
-            color: var(--accent-color);
+            font-size: 0.85rem;
+            color: var(--text-sub);
         }
-        .blog-link:hover { background: var(--accent-color); color: #fff; }
+        .blog-link:hover { border-color: var(--accent-color); color: var(--accent-color); }
 
         /* Sections */
         section {
-            padding: 7rem 5%;
-            max-width: 1200px;
+            padding: 6rem 5%;
+            max-width: 1000px; /* 폭을 살짝 줄여서 더 정돈된 느낌 */
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
+            font-size: 1.8rem; /* 폰트 사이즈 살짝 줄임 */
+            margin-bottom: 2.5rem;
             color: #fff;
             display: flex;
             align-items: center;
@@ -79,10 +79,10 @@
         h2::before {
             content: '';
             display: block;
-            width: 5px;
-            height: 30px;
+            width: 4px;
+            height: 24px;
             background: var(--accent-color);
-            margin-right: 15px;
+            margin-right: 12px;
             border-radius: 2px;
         }
 
@@ -97,88 +97,87 @@
         }
         .hero-tag {
             color: var(--accent-color);
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             margin-bottom: 1rem;
             text-transform: uppercase;
         }
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem; /* 너무 거대하지 않게 조절 */
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
             color: #fff;
         }
         .hero h1 span { color: var(--accent-color); }
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text-sub);
-            max-width: 700px;
+            max-width: 650px;
             margin-bottom: 2.5rem;
         }
         .btn {
             display: inline-block;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             background: transparent;
-            color: var(--accent-color);
-            font-weight: 600;
-            border: 2px solid var(--accent-color);
+            color: #fff;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         .btn:hover {
-            background: var(--accent-color);
-            color: #fff;
-            box-shadow: 0 0 20px rgba(108, 92, 231, 0.4);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         /* About Grid */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: 1fr 2fr; /* 텍스트 공간 확보 */
+            gap: 3rem;
+            align-items: start;
         }
         .profile-img-placeholder {
             width: 100%;
             aspect-ratio: 1/1;
-            background: linear-gradient(135deg, #222, #333);
-            border-radius: 10px;
+            background: #222;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--border-color);
             color: #555;
-            font-weight: bold;
+            font-size: 0.9rem;
         }
-        .about-text p { margin-bottom: 1.5rem; color: var(--text-sub); font-size: 1.05rem; }
-        .highlight { color: #fff; font-weight: 600; border-bottom: 1px solid var(--accent-color); }
+        .about-text p { margin-bottom: 1rem; color: var(--text-sub); font-size: 1rem; }
+        .highlight { color: #fff; font-weight: 600; }
 
         /* Skills/Interests Cards */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
         }
         .card {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             transition: 0.3s;
         }
         .card:hover {
             border-color: var(--accent-color);
-            transform: translateY(-5px);
-            background: #1c1c21;
+            transform: translateY(-3px);
         }
-        .card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #fff; }
-        .card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 1rem; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
+        .card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1rem; }
         .skill-tag {
             display: inline-block;
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            background: #2a2a2a;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            background: #25252b;
             border-radius: 4px;
             margin-right: 0.3rem;
             margin-bottom: 0.3rem;
@@ -188,214 +187,188 @@
         /* Projects List */
         .project-item {
             border-left: 2px solid var(--border-color);
-            padding-left: 2rem;
-            padding-bottom: 3rem;
+            padding-left: 1.5rem;
+            padding-bottom: 2.5rem;
             position: relative;
         }
         .project-item::before {
             content: '';
             position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-color);
+            left: -5px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--border-color);
             border-radius: 50%;
         }
+        .project-item:hover::before { background: var(--accent-color); }
+        
         .project-date {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 0.3rem;
             display: block;
         }
-        .project-title { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.8rem; }
-        .project-desc { color: var(--text-sub); margin-bottom: 1rem; }
+        .project-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .project-desc { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 0.8rem; }
         .project-link {
-            font-size: 0.9rem;
-            color: #fff;
-            text-decoration: underline;
-            text-decoration-color: var(--accent-color);
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        .project-link:hover { text-decoration: underline; }
+
+        /* Thesis Section (Simpler) */
+        .pub-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border: 1px solid transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pub-item:hover { border-color: var(--border-color); }
+        .pub-info h4 { color: #dcdcdc; font-size: 1rem; margin-bottom: 0.2rem; font-weight: 500;}
+        .pub-info span { font-size: 0.85rem; color: #777; }
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: #25252b;
+            color: #aaa;
         }
 
-        /* Publications Table Replacement */
-        .pub-item {
+        /* Contact */
+        .contact-box {
+            text-align: left;
+            padding: 3rem;
             background: var(--card-bg);
-            padding: 1.5rem;
             border-radius: 8px;
-            margin-bottom: 1rem;
             border: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .pub-info h4 { color: #fff; margin-bottom: 0.3rem; }
-        .pub-info span { font-size: 0.9rem; color: var(--text-sub); }
-        .status-badge {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            background: rgba(108, 92, 231, 0.15);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-        }
-
-        /* Contact */
-        .contact-box {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: var(--card-bg);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-        .contact-email { font-size: 1.8rem; font-weight: 700; color: #fff; margin: 1.5rem 0; }
+        .contact-info div { font-size: 1.1rem; font-weight: 600; color: #fff; }
+        .contact-info span { font-size: 0.9rem; color: var(--text-sub); display: block; margin-top: 0.5rem;}
         
         /* Mobile */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
+            .hero h1 { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; }
-            nav ul { display: none; } /* 모바일 메뉴 숨김 (추후 햄버거 메뉴 구현 가능) */
-            .pub-item { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            nav ul { display: none; } 
+            .pub-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .contact-box { flex-direction: column; text-align: center; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Moon's <span>Lab</span></div>
+        <div class="logo">Moon Hyuk <span>| Portfolio</span></div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Competencies</a></li>
-                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="http://moonhyuk.blog" target="_blank" class="blog-link">Blog Archive</a></li>
+                <li><a href="http://moonhyuk.blog" target="_blank" class="blog-link">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="hero">
-        <div class="hero-tag">Spatial Datamining and Optimization Research</div>
-        <h1>Hidden Context of<br><span>Space & Data</span></h1>
+        <div class="hero-tag">Undergraduate Portfolio</div>
+        <h1>Geography & <br><span>Industrial Engineering</span></h1>
         <p>
-            공간 데이터 마이닝을 통해 숨겨진 제약 조건을 규명하고,<br>
-            수리적 최적화를 통해 복잡한 시스템의 의사결정을 지원합니다.
+            공간이 가진 맥락을 데이터로 해석하고,<br>
+            공학적 모델링을 통해 최적의 해답을 찾아가는 과정을 기록합니다.
         </p>
-        <a href="#about" class="btn">View Research Profile</a>
+        <a href="#about" class="btn">Introduce Myself</a>
     </div>
 
     <section id="about">
-        <h2>About Moon</h2>
+        <h2>About Me</h2>
         <div class="about-grid">
             <div class="profile-img-placeholder">
-                <span>Photo Area</span>
+                <span>Photo</span>
             </div>
             <div class="about-text">
                 <p>
-                    <strong style="color:#fff; font-size:1.2rem;">문혁 (Moon Hyuk)</strong><br>
-                    전남대학교 지리학과(주전공) & 산업공학과(2전공) (GPA 3.91/4.5)
+                    안녕하세요, <strong>문혁</strong>입니다.<br>
+                    전남대학교에서 <span class="highlight">지리학</span>과 <span class="highlight">산업공학</span>을 복수전공하고 있습니다. (GPA 3.91/4.5)
                 </p>
                 <p>
-                    저는 <span class="highlight">공간 데이터마이닝(Spatial Data Mining)</span>을 통해 
-                    현실 세계의 숨겨진 제약 조건 및 가중치를 규명하는 연구를 수행합니다.
+                    지리학의 시선으로 도시와 공간 데이터를 이해하고, 산업공학의 도구(통계, 최적화)를 활용하여 문제를 해결하는 것에 큰 흥미를 느끼고 있습니다.
                 </p>
                 <p>
-                    나아가 이를 <span class="highlight">수리적 모델링(Mathematical Modeling)</span> 기반의 
-                    최적화 프레임워크에 융합하여, 시설물 입지, SCM, ITS 등 복잡한 시스템에 대한 
-                    최적의 의사결정 방안을 제시하는 것을 목표로 합니다.
+                    특히 <strong>공간 데이터 마이닝</strong>과 <strong>수요 예측 기반의 입지 최적화</strong> 분야에 관심을 가지고 깊이 있게 공부하고 있으며, 앞으로 대학원에 진학하여 관련 연구를 이어갈 계획입니다.
                 </p>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Core Competencies</h2>
+        <h2>Skills & Interests</h2>
         <div class="card-grid">
             <div class="card">
-                <h3>Optimization & Stat</h3>
-                <p>수리적 최적화(OR) 및 통계적 모델링</p>
+                <h3>📊 Optimization & Stat</h3>
+                <p>의사결정을 위한 수리적 모델링 학습</p>
                 <div>
                     <span class="skill-tag">Operations Research</span>
-                    <span class="skill-tag">Machine Learning</span>
                     <span class="skill-tag">Logit Model</span>
-                    <span class="skill-tag">Simulation</span>
+                    <span class="skill-tag">Machine Learning</span>
                 </div>
             </div>
             <div class="card">
-                <h3>Spatial Analysis (GIS)</h3>
-                <p>공간 데이터 처리 및 원격 탐사 기술</p>
+                <h3>🌍 Spatial Analysis</h3>
+                <p>GIS 및 공간 데이터 처리 역량</p>
                 <div>
                     <span class="skill-tag">Spatial Data Mining</span>
-                    <span class="skill-tag">Remote Sensing</span>
                     <span class="skill-tag">QGIS/ArcGIS</span>
-                    <span class="skill-tag">지적산업기사/측량및지형공간정보기사 보유</span>
+                    <span class="skill-tag">지적/측량기사</span>
                 </div>
             </div>
             <div class="card">
-                <h3>Programming</h3>
-                <p>알고리즘 구현 및 데이터 핸들링</p>
+                <h3>💻 Programming</h3>
+                <p>연구 및 분석을 위한 개발 도구 활용</p>
                 <div>
                     <span class="skill-tag">Python (Pandas, Scikit-learn)</span>
                     <span class="skill-tag">R</span>
                     <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">DB Design</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="publications">
-        <h2>Publications & Thesis</h2>
+    <section id="research">
+        <h2>Undergraduate Research</h2>
         <div class="pub-item">
             <div class="pub-info">
-                <h4>범죄발생밀도에 영향을 미치는 요인 분석 : 전국 229개 시군구를 대상으로</h4>
-                <span>지리학과 학사 논문</span>
+                <h4>범죄발생밀도에 영향을 미치는 요인 분석 : 전국 229개 시군구 대상</h4>
+                <span>지리학과 학사학위 청구논문</span>
             </div>
-            <div class="status-badge">2025.06</div>
+            <div class="status-badge">2025.06 (예정)</div>
         </div>
         <div class="pub-item">
             <div class="pub-info">
-                <h4>산업공학과 학사 졸업 논문</h4>
-                <span>연구 계획 수립 및 주제 선정 단계</span>
+                <h4>산업공학과 졸업 연구</h4>
+                <span>주제 선정 및 연구 계획 수립 중</span>
             </div>
             <div class="status-badge">2026.1H (예정)</div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Selected Projects</h2>
+        <h2>Academic Projects</h2>
         
         <div class="project-item">
-            <span class="project-date">2025.12.15</span>
-            <div class="project-title">광주광역시 첨단지구 잠재 태양광 발전 공급량 예측</div>
+            <span class="project-date">2025.12</span>
+            <div class="project-title">광주 첨단지구 태양광 발전 잠재량 예측</div>
             <div class="project-desc">
-                GIS 기반의 공간 분석을 통해 아파트 단지별 일조량 및 그림자 영향을 분석하여 
-                실제 발전 가능한 전력량을 예측한 시뮬레이션 프로젝트.
+                [GIS 응용] 아파트 단지별 음영 분석 및 일조량 시뮬레이션을 통한 공급량 산출
             </div>
-            <a href="solar_project.html" class="project-link">View Details →</a>
-        </div>
-
-        <div class="project-item">
-            <span class="project-date">2025.12.11</span>
-            <div class="project-title">이산선택모형을 통한 VR 기기 소비자 선호 분석</div>
-            <div class="project-desc">
-                기술혁신정책론 프로젝트. 이산선택실험(DCE)을 설계하고 Logit Model을 활용하여 
-                소비자의 VR 기기 속성별 지불 용의액(WTP) 및 수요를 예측함.
-            </div>
-            <a href="vr_project.html" class="project-link">View Details →</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-box">
-            <p>연구 협업 제안 및 문의는 언제든 환영합니다.</p>
-            <div class="contact-email">moonhyuk@jnu.ac.kr</div>
-            <p style="color:var(--text-sub);">Tel : 010-5420-3415</p>
-        </div>
-    </section>
-
-</body>
-</html>
+            <a href="solar_project.html" class="project-link">자세히 보기 →
