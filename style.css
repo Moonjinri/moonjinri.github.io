@@ -345,3 +345,34 @@ h2::before {
         min-width: auto;
     }
 }
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--card-bg); /* 카드 배경색과 동일하게 */
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 5rem; /* 위 섹션과 간격 띄우기 */
+}
+
+.footer-content p {
+    color: #666; /* 너무 튀지 않게 어두운 회색 */
+    font-size: 0.85rem;
+}
+
+.footer-content strong {
+    color: var(--text-main); /* 회사 이름은 밝게 */
+    font-weight: 600;
+}
+
+.footer-content span {
+    color: var(--accent-color); /* Parents' Wallet은 포인트 컬러로 강조 (후원자니까) */
+    font-weight: 500;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
+}
