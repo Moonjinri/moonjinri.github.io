@@ -106,3 +106,361 @@
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        .hero h1 span { color: var(--accent-color); }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: #fff;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .profile-img-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #222;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .about-text p { margin-bottom: 1rem; color: var(--text-sub); font-size: 1rem; }
+        .highlight { color: #fff; font-weight: 600; }
+
+        /* Skills/Interests Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        .card h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
+        .card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1rem; }
+        .skill-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            background: #25252b;
+            border-radius: 4px;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+            color: #ccc;
+        }
+
+        /* Projects List */
+        .project-item {
+            border-left: 2px solid var(--border-color);
+            padding-left: 1.5rem;
+            padding-bottom: 2.5rem;
+            position: relative;
+        }
+        .project-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 50%;
+        }
+        .project-item:hover::before { background: var(--accent-color); }
+        
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .project-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .project-desc { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 0.8rem; }
+        .project-link {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        .project-link:hover { text-decoration: underline; }
+
+        /* Publications Section */
+        .pub-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border: 1px solid transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pub-item:hover { border-color: var(--border-color); }
+        .pub-info { flex: 1; padding-right: 1rem; }
+        .pub-info h4 { color: #dcdcdc; font-size: 1rem; margin-bottom: 0.4rem; font-weight: 500;}
+        .pub-info span { font-size: 0.85rem; color: #777; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+        
+        /* PDF Button Style */
+        .pdf-btn {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .pdf-btn:hover { background: var(--accent-color); color: #fff; }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: #25252b;
+            color: #aaa;
+            white-space: nowrap;
+        }
+
+        /* Sub-headers for Research */
+        .research-sub-title {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .research-sub-title:first-of-type { margin-top: 0; }
+        .sub-tag { font-size: 0.8rem; color: #777; margin-left: 10px; font-weight: 400; }
+
+        /* Contact */
+        .contact-box {
+            text-align: left;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-info div { font-size: 1.1rem; font-weight: 600; color: #fff; }
+        .contact-info span { font-size: 0.9rem; color: var(--text-sub); display: block; margin-top: 0.5rem;}
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; } 
+            .pub-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .status-badge { align-self: flex-start; margin-top: 5px; }
+            .contact-box { flex-direction: column; text-align: center; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Moon Hyuk <span>| Portfolio</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="http://moonhyuk.blog" target="_blank" class="blog-link">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-tag">Undergraduate Portfolio</div>
+        <h1>Geography & <br><span>Industrial Engineering</span></h1>
+        <p>
+            공간이 가진 맥락을 데이터로 해석하고,<br>
+            공학적 모델링을 통해 최적의 해답을 찾아가는 과정을 기록합니다.
+        </p>
+        <a href="#about" class="btn">Introduce Myself</a>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div class="profile-img-placeholder">
+                <span>Photo</span>
+            </div>
+            <div class="about-text">
+                <p>
+                    안녕하세요, <strong>문혁</strong>입니다.<br>
+                    전남대학교에서 <span class="highlight">지리학</span>과 <span class="highlight">산업공학</span>을 복수전공하고 있습니다. (GPA 3.91/4.5)
+                </p>
+                <p>
+                    지리학의 시선으로 도시와 공간 데이터를 이해하고, 산업공학의 도구(통계, 최적화)를 활용하여 문제를 해결하는 것에 큰 흥미를 느끼고 있습니다.
+                </p>
+                <p>
+                    특히 <strong>공간 데이터 마이닝</strong>과 <strong>수요 예측 기반의 입지 최적화</strong> 분야에 관심을 가지고 깊이 있게 공부하고 있으며, 앞으로 대학원에 진학하여 관련 연구를 이어갈 계획입니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Interests</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>📊 Optimization & Stat</h3>
+                <p>의사결정을 위한 수리적 모델링 학습</p>
+                <div>
+                    <span class="skill-tag">Operations Research</span>
+                    <span class="skill-tag">Logit Model</span>
+                    <span class="skill-tag">Machine Learning</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>🌍 Spatial Analysis</h3>
+                <p>GIS 및 공간 데이터 처리 역량</p>
+                <div>
+                    <span class="skill-tag">Spatial Data Mining</span>
+                    <span class="skill-tag">QGIS/ArcGIS</span>
+                    <span class="skill-tag">지적/측량기사</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>💻 Programming</h3>
+                <p>연구 및 분석을 위한 개발 도구 활용</p>
+                <div>
+                    <span class="skill-tag">Python (Pandas, Scikit-learn)</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Java</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Research Pipeline</h2>
+        
+        <h3 class="research-sub-title">
+            Journal Articles 
+            <span class="sub-tag">(In Preparation)</span>
+        </h3>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <div style="margin-bottom:0.5rem;">
+                    <span class="skill-tag" style="color:#6c5ce7; border:1px solid #6c5ce7; background:rgba(108,92,231,0.1);">General Journal</span>
+                    <span class="skill-tag">현대사회과학연구</span>
+                </div>
+                <h4>강력범죄발생밀도에 영향을 미치는 요인 분석 : 전국 229개 시군구를 대상으로</h4>
+                <span>
+                    To be submitted to <em>Journal of Modern Social Sciences</em>
+                </span>
+            </div>
+            <div class="status-badge">2025.12 (투고 예정)</div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <div style="margin-bottom:0.5rem;">
+                    <span class="skill-tag" style="color:#f1c40f; border:1px solid #f1c40f; background:rgba(241,196,15,0.1);">Targeting KCI</span>
+                    <span class="skill-tag">Co-research with Ph.D. Student</span>
+                </div>
+                <h4>[Working Title] 공간 최적화 및 수요 예측 관련 공동 연구</h4>
+                <span>
+                    Collaborative research on Spatial Optimization & Demand Forecasting
+                </span>
+            </div>
+            <div class="status-badge">In Progress</div>
+        </div>
+
+        <h3 class="research-sub-title">Theses</h3>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <h4>범죄발생밀도에 영향을 미치는 요인 분석 : 전국 229개 시군구 대상</h4>
+                <span>
+                    지리학과 학사학위 청구논문 
+                    <a href="geo_bachelors_thesis.pdf" target="_blank" class="pdf-btn">PDF 보기</a>
+                </span>
+            </div>
+            <div class="status-badge">2025.06 (예정)</div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <h4>산업공학과 졸업 연구</h4>
+                <span>주제 선정 및 연구 계획 수립 단계</span>
+            </div>
+            <div class="status-badge">2026.06 (예정)</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Academic Projects</h2>
+        
+        <div class="project-item">
+            <span class="project-date">2025.12</span>
+            <div class="project-title">광주 첨단지구 태양광 발전 잠재량 예측</div>
+            <div class="project-desc">
+                [GIS응용및실습] 아파트 단지별 음영 분석 및 일조량 시뮬레이션을 통한 공급량 산출
+            </div>
+            <a href="solar_project.html" class="project-link">자세히 보기 →</a>
+        </div>
+
+        <div class="project-item">
+            <span class="project-date">2025.12</span>
+            <div class="project-title">이산선택모형을 활용한 VR 기기 수요 분석</div>
+            <div class="project-desc">
+                [기술혁신정책론] 이산선택실험 설계 및 혼합로짓모형 분석
+            </div>
+            <a href="vr_project.html" class="project-link">자세히 보기 →</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-box">
+            <div class="contact-info">
+                <div>moonhyuk@jnu.ac.kr</div>
+                <span>Tel. 010-5420-3415</span>
+                <span>연구 및 진로 관련 조언은 언제나 감사히 듣겠습니다.</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
